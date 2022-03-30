@@ -4,41 +4,35 @@ let newInventoryCarTypes = ['StockCar', 'Refrigerator', 'StockCar', 'Lorrie', 'L
 let newInventoryYearBuilt = [1922, 2011, 1975, 2002, 1965, 1951]
 
 //Step 2:
-// declaring our iterator, in this case "i". We start it at 0, as we want it to begin at the first value in any given array!
+const length = newInventoryCarModels.length;
 let i = 0
 
-// While loop from step 2:
-while(i < newInventoryCarModels.length){
-    console.log(`${newInventoryCarModels[i]} is of type: ${newInventoryCarTypes[i]}`)
-    // remember to increment your iterator, or you'll have an infinite loop!
+while(i < length){
+    console.log(`${newInventoryCarModels[i]} is a ${newInventoryCarTypes[i]} and was built in ${newInventoryYearBuilt[i]}`)
     i++
 }
 
 // Step 3:
-// declaring a new iterator for our next "while"
+const S1 = "S1"
 let j = 0
+let modelS1Count = 0
 
-// declaring our S1 count:
-let typeS1Count = 0
-
-// while loop adapted for the instructions in step 3:
-while(j < newInventoryCarModels.length){
-    if(newInventoryCarModels[j] === 'S1'){
-        typeS1Count++
+while(j < length){
+    if(newInventoryCarModels[j] === S1){
+        modelS1Count++
     }
     j++
 }
 
 // Step 4:
-console.log(`Number of S1 Cars is: ${typeS1Count}`)
+console.log(`Number of ${S1} cars is: ${modelS1Count}`)
 
-// Test step 5 on your own!
 
 // Step 6, 7:
-
+const LORRIE = "Lorrie"
 let lorrieCount = 0
-for(let i = 0; i < newInventoryCarModels.length; i++){
-    if(newInventoryCarTypes[i] === 'Lorrie'){
+for(let i = 0; i < length; i++){
+    if(newInventoryCarTypes[i] === LORRIE){
         lorrieCount++
     }
 }
@@ -47,12 +41,12 @@ for(let i = 0; i < newInventoryCarModels.length; i++){
 console.log(`I have found ${lorrieCount} lorries.`)
 
 // Bonus:
+const currentYear = 2022
+let totalAge = 0
 
-let totalValue = 0
-
-for(let i = 0; i < newInventoryYearBuilt.length; i++){
-    totalValue += (2022 - newInventoryYearBuilt[i])
+for(let i = 0; i < length; i++){
+   totalAge += (currentYear - newInventoryYearBuilt[i])
 }
 
-let averageYear = (totalValue / newInventoryYearBuilt.length)
-console.log(averageYear)
+let averageAge = (totalAge / length)
+console.log(`Average age is ${averageAge} years old`)
